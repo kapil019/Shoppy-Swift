@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shoppy-LaunchScreen-bg" translatesAutoresizingMaskIntoConstraints="NO" id="VIa-2B-XYd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shoppy-logo" translatesAutoresizingMaskIntoConstraints="NO" id="1w2-41-NP1">
+                                <rect key="frame" x="16" y="170" width="343" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="PBo-sM-8pd"/>
+                                    <constraint firstAttribute="width" constant="343" id="eQl-s1-ZYa"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shoppy-LaunchScreen-loading" translatesAutoresizingMaskIntoConstraints="NO" id="1CL-AD-k4a">
+                                <rect key="frame" x="120" y="443" width="135" height="144"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1w2-41-NP1" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="150" id="4Kk-Zh-b9A"/>
+                            <constraint firstItem="1CL-AD-k4a" firstAttribute="top" secondItem="VIa-2B-XYd" secondAttribute="bottom" constant="-224" id="71y-ms-Xfu"/>
+                            <constraint firstItem="1w2-41-NP1" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="8sk-DQ-Npz"/>
+                            <constraint firstItem="VIa-2B-XYd" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="Cnp-xx-f63"/>
+                            <constraint firstItem="VIa-2B-XYd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="D5p-8S-O1I"/>
+                            <constraint firstItem="VIa-2B-XYd" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="VTB-pX-TAz"/>
+                            <constraint firstItem="1CL-AD-k4a" firstAttribute="centerX" secondItem="1w2-41-NP1" secondAttribute="centerX" id="YJa-sA-PRY"/>
+                            <constraint firstItem="1w2-41-NP1" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="gT5-UA-d7R"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="1CL-AD-k4a" secondAttribute="bottom" constant="80" id="nmX-gE-Inl"/>
+                            <constraint firstItem="1CL-AD-k4a" firstAttribute="leading" secondItem="VIa-2B-XYd" secondAttribute="trailing" constant="-255" id="x3s-AH-UTi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Shoppy-LaunchScreen-bg" width="750" height="1334"/>
+        <image name="Shoppy-LaunchScreen-loading" width="135" height="149"/>
+        <image name="Shoppy-logo" width="596" height="109"/>
+    </resources>
+</document>
