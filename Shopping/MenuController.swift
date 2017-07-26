@@ -14,10 +14,8 @@ class MenuController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var ManuNameArray:Array = [String]()
     var iconArray:Array = [String]()
     override func viewDidLoad() {
+        let categoryLoading = self.displayLoading();
         super.viewDidLoad()
-        
-//        var categoryList = doHttpRequest(url: "category.php", method: "GET", params: "category:category");
-        
         var categoryList:[String: Any];
         
         if let categoryListCoreData = UserDefaults.standard.object(forKey: "categoryList") as? [String: Any] {
@@ -27,22 +25,21 @@ class MenuController: UIViewController,UITableViewDelegate,UITableViewDataSource
             UserDefaults.standard.set(categoryList, forKey: "categoryList");
         }
         
-        
-        print(categoryList)
         if !(categoryList.isEmpty) {
             let status = categoryList["status"] as! String
             if(status == "false") {
-                print(categoryList["error"]! ?? "");
+                print(categoryList["error"]!);
             } else {
+                categoryLoading.dismiss(animated: false, completion: {})
                 let categoryListArray: NSArray = categoryList["category"] as! NSArray
                 for i in 0 ..< categoryListArray.count{
                     //getting the data at each index
                     let categoryArray = categoryListArray[i] as! Dictionary<String,AnyObject>
-                    ManuNameArray.append(categoryArray["categoryName"]! as! String)
+                    self.ManuNameArray.append(categoryArray["categoryName"]! as! String)
                     let categoryImage = self.categoryBaseUrl()+(categoryArray["categoryImage"]! as! String)
-                    iconArray.append(categoryImage)
+                    self.iconArray.append(categoryImage)
+                }
             }
-        }
         }
 
     }
@@ -107,7 +104,11 @@ class MenuController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBAction func logotUser(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "sessionToken")
         UserDefaults.standard.removeObject(forKey: "categoryList")
+        UserDefaults.standard.removeObject(forKey: "productList")
 //        self.performSegue(withIdentifier: "showHome", sender: self)
+        let MainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let desCV = MainStoryboard.instantiateViewController(withIdentifier: "Login") as! LoginController
+        self.show(desCV, sender: nil)
     }
     
     

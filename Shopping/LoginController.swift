@@ -41,6 +41,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func doLogin(_ sender: Any) {
+        let signinLoading = self.displayLoading();
         if(emailTxt.text == "") {
             errorMsg.isHidden = false
             errorMsg.text = "Please enter email id."
@@ -77,7 +78,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
             } else {
                 let sessionToken = loginResp?["sessionToken"] as! String
                 UserDefaults.standard.set(sessionToken, forKey: "sessionToken")
-                self.performSegue(withIdentifier: "showHome", sender: self)
+                signinLoading.dismiss(animated: false, completion: {
+                    self.performSegue(withIdentifier: "showHome", sender: self)
+                })
             }
             } else {
                 errorMsg.isHidden = false

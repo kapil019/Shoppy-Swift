@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProductDetailController: UIViewController {
     
@@ -16,14 +17,24 @@ class ProductDetailController: UIViewController {
     
     var getName = String()
     var getPrice = String()
-    var getImage = UIImage()
+    var getImage = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         lblName.text! = getName
-        imgImage.image = getImage
+        let mediaURL = URL(string: getImage);
+        do {
+            let _ = try Data(contentsOf: mediaURL!);
+            let _ = SDWebImageDownloader.shared().downloadImage(with: mediaURL, options: [], progress: nil, completed: { (image, data, error,   finished) in
+                DispatchQueue.main.async {
+                    self.imgImage.image = image
+                }
+            })
+        } catch {
+            print("Error While Loading Image.")
+        }
         price.text! = getPrice
         
     }

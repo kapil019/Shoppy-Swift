@@ -12,13 +12,23 @@ import Foundation
 extension UIViewController {
     
     func baseUrl() -> String {
-//        return "http://192.168.0.105/api/";
+        //return "http://localhost/Shoppy-Api/";
         return "http://dlcl.in/api/";
     }
     
     func categoryBaseUrl() -> String {
-//        return "http://192.168.0.105/api/upload/category/";
+        //return "http://localhost/Shoppy-Api/upload/category/";
         return "http://dlcl.in/api/upload/category/";
+    }
+    
+    func productBaseUrl() -> String {
+//        return "http://localhost/Shoppy-Api/upload/product/thumb/th_";
+        return "http://dlcl.in/api/upload/product/thumb/th_";
+    }
+    
+    func sliderBaseUrl() -> String {
+//        return "http://localhost/Shoppy-Api/upload/slider/";
+        return "http://dlcl.in/api/upload/slider/";
     }
     
     func doHttpRequest(url: String, method:String, params:String) -> [String: Any]? {
@@ -74,6 +84,19 @@ extension UIViewController {
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func displayLoading() -> UIAlertController {
+        //create an alert controller
+        let alertController = UIAlertController(title: nil, message: "Please wait\n\n", preferredStyle: .alert)
+        let spinnerIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        
+        spinnerIndicator.center = CGPoint(x: 135.0, y: 65.5)
+        spinnerIndicator.color = UIColor.black
+        spinnerIndicator.startAnimating()
+        alertController.view.addSubview(spinnerIndicator)
+        self.present(alertController, animated: true, completion: nil)
+        return alertController
     }
     
     

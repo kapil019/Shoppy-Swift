@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 
 
 class HomeController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -16,79 +16,102 @@ class HomeController: UIViewController,UICollectionViewDelegate,UICollectionView
     @IBOutlet weak var homeSlider: UIScrollView!
     
     var names: [String] = []
+    var product:[String: Any] = [:];
     
-    var productImageName = [UIImage(named: "th_product_13400"),UIImage(named: "th_product_13440"),UIImage(named: "th_product_87022"),UIImage(named: "th_product_151530"),UIImage(named: "th_product_152000"),UIImage(named: "th_product_163400"),UIImage(named: "th_product_172560"),UIImage(named: "th_product_1462389051")]
+    var productImage: [String] = []
+    var productName: [String] = []
+    var productPrice: [String] = []
     
-    var productNameArray = ["First Shoes","2 shoes","First Shoes","2 shoes","First Shoes","2 shoes","First Shoes","2 shoes"]
-    var productPriceArray = ["Rs. 2000","Rs. 1000","Rs. 3000","Rs. 400","Rs. 100","Rs. 10","Rs. 190","Rs. 56"]
+    var sliderImageName = [String]()
     
-    var sliderImageName = [UIImage()]
+    var sliderImage:[String: Any] = [:];
+    
+    
     override func viewDidLoad() {
-        
-//        let _ = doHttpRequest(url: "category.php", method: "GET", params: "category:category");
-        
-//        let isLoged = self.checkLogin(contactSegue: "")
-        
         super.viewDidLoad()
-        
-        let url=URL(string:"http://localhost/being/api/homeSlider.php")
-        do {
-            let allContactsData = try Data(contentsOf: url!)
-            let allContacts = try JSONSerialization.jsonObject(with: allContactsData, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : AnyObject]
-            if let arrJSON = allContacts["slider"] {
-                for _ in 0...arrJSON.count-1 {
-//                    let aObject = "http://localhost/being/upload/slider/\(arrJSON[index]!)"
-//                    print(aObject)
-//                    sliderImageName.append(aObject);
-                }
-            }
-//            print(sliderImageName)
-        }
-        catch {
-            
-        }
-        
         
         self.open.target = self.revealViewController()
         self.open.action = #selector(SWRevealViewController.revealToggle(_:))
-        sliderImageName = [UIImage(named: "slider1")!,UIImage(named: "slider2")!,UIImage(named: "slider3")!]
-
-        for i in 0..<sliderImageName.count{
-            
+        
+        //Create Slider
+        self.createSlider()
+        self.getProduct()
+    }
+    
+    
+    private func createSlider() {
+        
+        if let categoryListCoreData = UserDefaults.standard.object(forKey: "sliderImage") as? [String: Any] {
+            sliderImage = categoryListCoreData;
+        } else {
+            sliderImage = doHttpRequest(url: "slider.php", method: "GET", params: "")!;
+            UserDefaults.standard.set(sliderImage, forKey: "sliderImage");
+        }
+        
+        if !(sliderImage.isEmpty) {
+            let status = sliderImage["status"] as! String
+            if(status == "false") {
+                print(sliderImage["error"]!);
+            } else {
+                let sliderImageArray: NSArray = sliderImage["slider"] as! NSArray
+                for i in 0 ..< sliderImageArray.count{
+                    //getting the data at each index
+                    let sliderArray = sliderImageArray[i] as! Dictionary<String,AnyObject>
+                    let sliderImage = self.sliderBaseUrl()+(sliderArray["sliderImage"]! as! String)
+                    sliderImageName.append(sliderImage)
+                }
+            }
+        }
+        
+        for i in 0..<sliderImageName.count {
             let imageView = UIImageView()
-            imageView.image = sliderImageName[i]
+            let mediaURL = URL(string: sliderImageName[i]);
+            let _ = try! Data(contentsOf: mediaURL!);
+            let _ = SDWebImageDownloader.shared().downloadImage(with: mediaURL, options: [], progress: nil, completed: { (image, data, error, finished) in
+                DispatchQueue.main.async {
+                    imageView.image = image
+                }
+            })
+            
             imageView.contentMode = .scaleAspectFit
             let xPosition = self.view.frame.width * CGFloat(i)
             imageView.frame = CGRect(x: xPosition, y:0 , width: self.homeSlider.frame.width, height: self.homeSlider.frame.height)
             
             homeSlider.contentSize.width = homeSlider.frame.width * CGFloat(i+1)
-            
             homeSlider.addSubview(imageView)
         }
     }
 
     
-//    func getProduct() -> String {
-//        var request = URLRequest(url: URL(string: "http://localhost/being/api/homeSlider.php")!)
-//        request.httpMethod = "GET"
-//        //        request.httpBody = postString.data(using: .utf8)
-//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//            guard error == nil else {
-//                print(error!)
-//                return
-//            }
-//            guard let data = data else {
-//                print("Data is empty")
-//                return
-//            }
-//            
-//            let json = try! JSONSerialization.jsonObject(with: data, options: [])
-//            print(json)
-//            return
-//        }
-//        task.resume()
-//        return
-//    }
+    private func getProduct() {
+        
+        if let productListCoreData = UserDefaults.standard.object(forKey: "productList") as? [String: Any] {
+            product = productListCoreData;
+        } else {
+            product = doHttpRequest(url: "product.php", method: "GET", params: "")!;
+            UserDefaults.standard.set(product, forKey: "productList");
+        }
+//        print(product)
+        if !(product.isEmpty) {
+            let status = product["status"] as! String
+            if(status == "false") {
+                print(product["error"]!);
+            } else {
+                let productArray: NSArray = product["product"] as! NSArray
+                for i in 0 ..< productArray.count {
+                    //getting the data at each index
+                    let productDetails = productArray[i] as! Dictionary<String,AnyObject>
+                    let _productImage = self.productBaseUrl()+(productDetails["productImage"]! as! String)
+                    let _productName = productDetails["productName"]! as! String
+                    let _productPrice = productDetails["productRate"]! as! String
+                    productImage.append(_productImage)
+                    productName.append(_productName)
+                    productPrice.append(_productPrice)
+                }
+            }
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -96,14 +119,25 @@ class HomeController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productNameArray.count
+        return productName.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCellController
-        cell.productImg.image = productImageName[indexPath.row]
-        cell.productName.text! = productNameArray[indexPath.row]
-        cell.productPrice.text! = productPriceArray[indexPath.row]
+        let mediaURL = URL(string: productImage[indexPath.row]);
+        do {
+            let _ = try Data(contentsOf: mediaURL!);
+            let _ = SDWebImageDownloader.shared().downloadImage(with: mediaURL, options: [], progress: nil, completed: { (image, data, error,   finished) in
+                DispatchQueue.main.async {
+                    cell.productImg.image = image
+                }
+            })
+        } catch {
+            print("Error While Loading Image.")
+        }
+        
+        cell.productName.text! = productName[indexPath.row]
+        cell.productPrice.text! = productPrice[indexPath.row]
 //        cell.layer.borderWidth = 1.0;
 //        cell.layer.borderColor = UIColor.gray.cgColor;
         return cell
@@ -123,9 +157,9 @@ class HomeController: UIViewController,UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let MainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let desCV = MainStoryboard.instantiateViewController(withIdentifier: "ProductDetailController") as! ProductDetailController
-        desCV.getImage = productImageName[indexPath.row]!
-        desCV.getName = productNameArray[indexPath.row]
-        desCV.getPrice = productPriceArray[indexPath.row]
+        desCV.getImage = productImage[indexPath.row]
+        desCV.getName = productName[indexPath.row]
+        desCV.getPrice = productPrice[indexPath.row]
         self.show(desCV, sender: nil)
         
     }
