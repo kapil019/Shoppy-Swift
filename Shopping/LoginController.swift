@@ -68,15 +68,20 @@ class LoginController: UIViewController, UITextFieldDelegate {
             
             //Login Request
             let postString = "email=\(emailTxt.text!)&password=\(passwordTxt.text!)"
-            let a = doHttpRequest(url: "login.php", method: "POST", params: postString);
-            let status = a?["status"] as! String
+            let loginResp = doHttpRequest(url: "login.php", method: "POST", params: postString);
+            if !((loginResp?.isEmpty)!) {
+            let status = loginResp?["status"] as! String
             if(status == "false") {
                 errorMsg.isHidden = false
-                errorMsg.text = a?["error"] as? String
+                errorMsg.text = loginResp?["error"] as? String
             } else {
-                let sessionToken = a?["sessionToken"] as! String
+                let sessionToken = loginResp?["sessionToken"] as! String
                 UserDefaults.standard.set(sessionToken, forKey: "sessionToken")
                 self.performSegue(withIdentifier: "showHome", sender: self)
+            }
+            } else {
+                errorMsg.isHidden = false
+                errorMsg.text = "Error while login."
             }
             activityIndicator.stopAnimating()
             UIApplication.shared.endIgnoringInteractionEvents()

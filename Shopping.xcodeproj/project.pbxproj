@@ -11,26 +11,29 @@
 		112C97C91E75C26A0087B58C /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112C97C81E75C26A0087B58C /* CartController.swift */; };
 		1143608E1E9E9FEB00C96620 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1143608D1E9E9FEB00C96620 /* Extension.swift */; };
 		1149511E1E966F1C00596B6B /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149511D1E966F1C00596B6B /* TestController.swift */; };
+		114E96CC1F28F085001C8C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114E96CB1F28F085001C8C29 /* Assets.xcassets */; };
 		11561D561E82ED1A0000BFB9 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11561D551E82ED1A0000BFB9 /* MenuController.swift */; };
 		11561D581E82EE0E0000BFB9 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11561D571E82EE0E0000BFB9 /* MenuCell.swift */; };
 		116733CB1E79D74A00B327F7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116733CA1E79D74A00B327F7 /* SWRevealViewController.m */; };
 		11A213551E754472009FD3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A213541E754472009FD3E9 /* AppDelegate.swift */; };
 		11A2135A1E754472009FD3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A213581E754472009FD3E9 /* Main.storyboard */; };
 		11A2135D1E754472009FD3E9 /* Shopping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11A2135B1E754472009FD3E9 /* Shopping.xcdatamodeld */; };
-		11A2135F1E754472009FD3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A2135E1E754472009FD3E9 /* Assets.xcassets */; };
 		11A213621E754472009FD3E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A213601E754472009FD3E9 /* LaunchScreen.storyboard */; };
 		11A2136A1E7571D0009FD3E9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A213691E7571D0009FD3E9 /* LoginController.swift */; };
 		11A2136C1E757201009FD3E9 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2136B1E757201009FD3E9 /* RegisterController.swift */; };
 		11A6A1521E75CB0400650E3F /* ProductCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6A1511E75CB0400650E3F /* ProductCellController.swift */; };
 		11A6A1541E75D7D900650E3F /* ProductDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6A1531E75D7D900650E3F /* ProductDetailController.swift */; };
 		11A6A1561E75E65700650E3F /* CartCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A6A1551E75E65700650E3F /* CartCellController.swift */; };
+		11FF020DE92097ECF9934A89 /* Pods_Shopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E6D3F3C768943FCB787DAB6 /* Pods_Shopping.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E6D3F3C768943FCB787DAB6 /* Pods_Shopping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shopping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		112C97C61E75BD8E0087B58C /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		112C97C81E75C26A0087B58C /* CartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
 		1143608D1E9E9FEB00C96620 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1149511D1E966F1C00596B6B /* TestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
+		114E96CB1F28F085001C8C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11561D551E82ED1A0000BFB9 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		11561D571E82EE0E0000BFB9 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		116733C61E79C00800B327F7 /* Shopping-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Shopping-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -40,7 +43,6 @@
 		11A213541E754472009FD3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A213591E754472009FD3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11A2135C1E754472009FD3E9 /* Shopping.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shopping.xcdatamodel; sourceTree = "<group>"; };
-		11A2135E1E754472009FD3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A213611E754472009FD3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11A213631E754472009FD3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11A213691E7571D0009FD3E9 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -48,6 +50,8 @@
 		11A6A1511E75CB0400650E3F /* ProductCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCellController.swift; sourceTree = "<group>"; };
 		11A6A1531E75D7D900650E3F /* ProductDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailController.swift; sourceTree = "<group>"; };
 		11A6A1551E75E65700650E3F /* CartCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCellController.swift; sourceTree = "<group>"; };
+		7B06CC3A46E199AA1EF5CDF6 /* Pods-Shopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shopping/Pods-Shopping.release.xcconfig"; sourceTree = "<group>"; };
+		95114E2AA307107481156375 /* Pods-Shopping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shopping/Pods-Shopping.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11FF020DE92097ECF9934A89 /* Pods_Shopping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +87,8 @@
 			children = (
 				11A213531E754472009FD3E9 /* Shopping */,
 				11A213521E754472009FD3E9 /* Products */,
+				BFC7839A9C3065BCBD29E51C /* Pods */,
+				EC613304A2DDF95EC30CD47C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,15 +108,32 @@
 				11A213581E754472009FD3E9 /* Main.storyboard */,
 				1143608D1E9E9FEB00C96620 /* Extension.swift */,
 				11561D571E82EE0E0000BFB9 /* MenuCell.swift */,
-				11A2135E1E754472009FD3E9 /* Assets.xcassets */,
 				116733C61E79C00800B327F7 /* Shopping-Bridging-Header.h */,
 				11A213601E754472009FD3E9 /* LaunchScreen.storyboard */,
 				116733C91E79D74A00B327F7 /* SWRevealViewController.h */,
 				116733CA1E79D74A00B327F7 /* SWRevealViewController.m */,
 				11A213631E754472009FD3E9 /* Info.plist */,
 				11A2135B1E754472009FD3E9 /* Shopping.xcdatamodeld */,
+				114E96CB1F28F085001C8C29 /* Assets.xcassets */,
 			);
 			path = Shopping;
+			sourceTree = "<group>";
+		};
+		BFC7839A9C3065BCBD29E51C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				95114E2AA307107481156375 /* Pods-Shopping.debug.xcconfig */,
+				7B06CC3A46E199AA1EF5CDF6 /* Pods-Shopping.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC613304A2DDF95EC30CD47C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E6D3F3C768943FCB787DAB6 /* Pods_Shopping.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,9 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11A213661E754472009FD3E9 /* Build configuration list for PBXNativeTarget "Shopping" */;
 			buildPhases = (
+				B45B2CA62F452E7EC88C893E /* [CP] Check Pods Manifest.lock */,
 				11A2134D1E754472009FD3E9 /* Sources */,
 				11A2134E1E754472009FD3E9 /* Frameworks */,
 				11A2134F1E754472009FD3E9 /* Resources */,
+				7DF69F02C19D562EE48C681E /* [CP] Embed Pods Frameworks */,
+				7DE995CA163E6EEDD6EC851B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,12 +201,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A213621E754472009FD3E9 /* LaunchScreen.storyboard in Resources */,
-				11A2135F1E754472009FD3E9 /* Assets.xcassets in Resources */,
+				114E96CC1F28F085001C8C29 /* Assets.xcassets in Resources */,
 				11A2135A1E754472009FD3E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7DE995CA163E6EEDD6EC851B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Shopping/Pods-Shopping-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DF69F02C19D562EE48C681E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Shopping/Pods-Shopping-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B45B2CA62F452E7EC88C893E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11A2134D1E754472009FD3E9 /* Sources */ = {
@@ -318,6 +393,7 @@
 		};
 		11A213671E754472009FD3E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95114E2AA307107481156375 /* Pods-Shopping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -334,6 +410,7 @@
 		};
 		11A213681E754472009FD3E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B06CC3A46E199AA1EF5CDF6 /* Pods-Shopping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

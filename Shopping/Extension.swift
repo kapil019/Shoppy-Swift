@@ -12,15 +12,26 @@ import Foundation
 extension UIViewController {
     
     func baseUrl() -> String {
-        return "http://localhost/api/";
+//        return "http://192.168.0.105/api/";
+        return "http://dlcl.in/api/";
+    }
+    
+    func categoryBaseUrl() -> String {
+//        return "http://192.168.0.105/api/upload/category/";
+        return "http://dlcl.in/api/upload/category/";
     }
     
     func doHttpRequest(url: String, method:String, params:String) -> [String: Any]? {
-        let baseUrl = self.baseUrl();
-        var request = URLRequest(url: URL(string: baseUrl+url)!)
+        let apiUrl = self.baseUrl()+url;
+        print("Url:- "+apiUrl)
+        print("Method:- "+method)
+        print("Params:- "+params)
+        var request = URLRequest(url: URL(string: apiUrl)!)
         request.httpMethod = method
         let semaphore = DispatchSemaphore(value: 0)
+        if method != "GET" {
         request.httpBody = params.data(using: .utf8)
+        }
         var resp:[String: Any] = [:];
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else {
@@ -32,12 +43,13 @@ extension UIViewController {
                 return
             }
             let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            print(json)
             resp = json!
             semaphore.signal()
         }
         task.resume()
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
+        print("Resp")
+        print(resp)
         return resp;
     }
     

@@ -25,8 +25,7 @@ class HomeController: UIViewController,UICollectionViewDelegate,UICollectionView
     var sliderImageName = [UIImage()]
     override func viewDidLoad() {
         
-//        let a = doHttpRequest(url: "category.php", method: "GET", params: "category:category");
-//        print(a)
+//        let _ = doHttpRequest(url: "category.php", method: "GET", params: "category:category");
         
 //        let isLoged = self.checkLogin(contactSegue: "")
         
@@ -37,7 +36,7 @@ class HomeController: UIViewController,UICollectionViewDelegate,UICollectionView
             let allContactsData = try Data(contentsOf: url!)
             let allContacts = try JSONSerialization.jsonObject(with: allContactsData, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : AnyObject]
             if let arrJSON = allContacts["slider"] {
-                for index in 0...arrJSON.count-1 {
+                for _ in 0...arrJSON.count-1 {
 //                    let aObject = "http://localhost/being/upload/slider/\(arrJSON[index]!)"
 //                    print(aObject)
 //                    sliderImageName.append(aObject);
