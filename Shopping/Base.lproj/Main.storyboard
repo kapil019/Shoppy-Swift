@@ -298,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1WX-3U-KdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65" y="703"/>
+            <point key="canvasLocation" x="-140" y="657"/>
         </scene>
         <!--Register-->
         <scene sceneID="sS9-eL-fki">
@@ -550,7 +550,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="2436"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doX-Bt-1GC">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2436"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ee-AT-Bcl">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -560,11 +560,11 @@
                                                 </constraints>
                                             </scrollView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zpj-eS-hyU">
-                                                <rect key="frame" x="0.0" y="198" width="375" height="2300"/>
+                                                <rect key="frame" x="0.0" y="198" width="375" height="1900"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="375" id="BvB-24-2bt"/>
-                                                    <constraint firstAttribute="height" constant="2300" id="FWf-TE-L5V"/>
+                                                    <constraint firstAttribute="height" constant="1900" id="jdf-Rw-ceJ"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QW8-sc-Knu">
                                                     <size key="itemSize" width="50" height="50"/>
@@ -581,7 +581,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="imageView:QYm-6H-WDr:image" translatesAutoresizingMaskIntoConstraints="NO" id="QYm-6H-WDr">
-                                                                    <rect key="frame" x="6" y="35.5" width="170" height="147.5"/>
+                                                                    <rect key="frame" x="6" y="36" width="170" height="147"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOJ-7y-kj7">
                                                                     <rect key="frame" x="8" y="5" width="166" height="15"/>
@@ -629,7 +629,7 @@
                                             <constraint firstAttribute="trailing" secondItem="1Ee-AT-Bcl" secondAttribute="trailing" id="NMs-W3-hFD"/>
                                             <constraint firstItem="1Ee-AT-Bcl" firstAttribute="leading" secondItem="doX-Bt-1GC" secondAttribute="leading" id="X0u-ef-du1"/>
                                             <constraint firstItem="1Ee-AT-Bcl" firstAttribute="top" secondItem="doX-Bt-1GC" secondAttribute="top" id="ZMu-md-9kn"/>
-                                            <constraint firstAttribute="height" constant="1000" id="coV-sK-6Tu"/>
+                                            <constraint firstAttribute="height" constant="2436" id="coV-sK-6Tu"/>
                                             <constraint firstItem="Zpj-eS-hyU" firstAttribute="leading" secondItem="1Ee-AT-Bcl" secondAttribute="leading" id="dAk-G0-23T"/>
                                         </constraints>
                                     </view>
@@ -674,7 +674,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTO-up-cb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-994.39999999999998" y="702.54872563718152"/>
+            <point key="canvasLocation" x="-1198" y="657"/>
         </scene>
         <!--Menu Controller-->
         <scene sceneID="9f5-Af-tt2">
@@ -761,7 +761,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Asv-LB-Vrv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2121" y="-450"/>
+            <point key="canvasLocation" x="-2079" y="108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CCe-qv-9ux">
@@ -779,7 +779,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nG9-uY-oeu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2079" y="657"/>
+            <point key="canvasLocation" x="-2079" y="1040"/>
         </scene>
     </scenes>
     <resources>
